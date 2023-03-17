@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+require_once('vendor/autoload.php');
+
 use PHPUnit\Framework\TestCase;
+use Smeghead\TddCopyingPhp\Dollar;
 
 class MoneyTest extends TestCase
 {
