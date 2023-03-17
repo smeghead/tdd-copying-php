@@ -3,5 +3,5 @@
 ## open shell
 
 ```bash
-docker-compose run php_cli bash
+docker-compose run --rm php_cli bash
 ```
