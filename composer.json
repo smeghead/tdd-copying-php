@@ -1,0 +1,14 @@
+{
+    "name": "smeghead/tdd_copying_php",
+    "type": "practice",
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "license": "Apache 2.0",
+    "autoload": {
+        "psr-4": {
+            "Smeghead\\TddCopyingPhp\\": "src/"
+        }
+    },
+    "require": {}
+}
