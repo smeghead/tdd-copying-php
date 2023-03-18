@@ -40,4 +40,9 @@ class Money
     {
         return $this->currency;
     }
+
+    public function plus(Money $other): Money
+    {
+        return new Money($this->amount + $other->amount, $this->currency);
+    }
 }
