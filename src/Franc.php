@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Smeghead\TddCopyingPhp;
 
-class Dollar
+class Franc
 {
     private int $amount = 0;
     
