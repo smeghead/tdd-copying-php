@@ -12,7 +12,7 @@ docker-compose run --rm php_cli bash
 
 ## Diagrams
 
-各章の時点でのクラス図の記録です。
+各章の時点でのクラス図の記録です。自作ツールのphp-class-diagramで出力しています。
 
 ### chapter 1
 
