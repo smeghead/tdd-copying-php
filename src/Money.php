@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace Smeghead\TddCopyingPhp;
 
-abstract class Money
+class Money
 {
     protected int $amount;
     protected string $currency;
 
-    abstract public function times(int $multiplier): Money;
+    public function times(int $multiplier): Money
+    {
+        return new Money($this->amount * $multiplier, $this->currency);
+    }
 
     public function __construct(int $amount, string $currency)
     {
@@ -20,7 +23,7 @@ abstract class Money
     public function equals(self $other): bool
     {
         return $this->amount === $other->amount
-            && get_class($this) === get_class($other);
+            && $this->currency === $other->currency;
     }
 
     public static function dollar(int $amount): Money
