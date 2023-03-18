@@ -6,7 +6,7 @@ namespace Smeghead\TddCopyingPhp;
 
 class Dollar
 {
-    public int $amount = 0;
+    private int $amount = 0;
     public function __construct(int $amount)
     {
         $this->amount = $amount;
