@@ -63,3 +63,7 @@ docker-compose run --rm php_cli bash
 #### 第12章 設計とメタファー
 
 ![Chapter 12](diagrams/chapter12.png)
+
+#### 第13章 実装を導くテスト
+
+![Chapter 13](diagrams/chapter13.png)

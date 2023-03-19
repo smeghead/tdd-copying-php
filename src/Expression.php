@@ -6,4 +6,5 @@ namespace Smeghead\TddCopyingPhp;
 
 interface Expression
 {
+    public function reduce(string $to): Money;
 }

@@ -6,7 +6,8 @@ namespace Smeghead\TddCopyingPhp;
 
 class Money implements Expression
 {
-    protected int $amount;
+    public int $amount; // PHP にパッケージ内アクセスがないためpublicにする
+    // protected int $amount;
     protected string $currency;
 
     public function times(int $multiplier): Money
@@ -43,6 +44,11 @@ class Money implements Expression
 
     public function plus(Money $other): Expression
     {
-        return new Money($this->amount + $other->amount, $this->currency);
+        return new Sum($this, $other);
+    }
+
+    public function reduce(string $to): Money
+    {
+        return $this;
     }
 }
