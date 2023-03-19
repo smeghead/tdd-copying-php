@@ -52,7 +52,7 @@ docker-compose run --rm php_cli bash
 
 ![Chapter 9](diagrams/chapter9.png)
 
-#### 第10章 テストに聴いてみる
+#### 第10章 テストに聞いてみる
 
 ![Chapter 10](diagrams/chapter10.png)
 
