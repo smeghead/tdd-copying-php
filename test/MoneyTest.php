@@ -5,6 +5,7 @@ declare(strict_types=1);
 require_once('vendor/autoload.php');
 
 use PHPUnit\Framework\TestCase;
+use Smeghead\TddCopyingPhp\Bank;
 use Smeghead\TddCopyingPhp\Dollar;
 use Smeghead\TddCopyingPhp\Franc;
 use Smeghead\TddCopyingPhp\Money;
@@ -32,7 +33,10 @@ class MoneyTest extends TestCase
     }
 
     public function testSimpleAddition() {
-        $sum = Money::dollar(5)->plus(Money::dollar(5));
-        $this->assertTrue(Money::dollar(10)->equals($sum));
+        $five = Money::dollar(5);
+        $sum = $five->plus($five);
+        $bank = new Bank();
+        $reduced = $bank->reduce($sum, 'USD');
+        $this->assertTrue(Money::dollar(10)->equals($reduced));
     }
 }

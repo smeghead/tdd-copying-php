@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Smeghead\TddCopyingPhp;
 
-class Money
+class Money implements Expression
 {
     protected int $amount;
     protected string $currency;
@@ -41,7 +41,7 @@ class Money
         return $this->currency;
     }
 
-    public function plus(Money $other): Money
+    public function plus(Money $other): Expression
     {
         return new Money($this->amount + $other->amount, $this->currency);
     }
