@@ -6,8 +6,6 @@ require_once('vendor/autoload.php');
 
 use PHPUnit\Framework\TestCase;
 use Smeghead\TddCopyingPhp\Bank;
-use Smeghead\TddCopyingPhp\Dollar;
-use Smeghead\TddCopyingPhp\Franc;
 use Smeghead\TddCopyingPhp\Money;
 
 class MoneyTest extends TestCase
@@ -53,6 +51,14 @@ class MoneyTest extends TestCase
     {
         $bank = new Bank();
         $result = $bank->reduce(Money::dollar(1), 'USD');
+        $this->assertTrue(Money::dollar(1)->equals($result));
+    }
+
+    public function testReduceMoneyDifferentCurrency()
+    {
+        $bank = new Bank();
+        $bank->addRate('CHF', 'USD', 2);
+        $result = $bank->reduce(Money::franc(2), 'USD');
         $this->assertTrue(Money::dollar(1)->equals($result));
     }
 }

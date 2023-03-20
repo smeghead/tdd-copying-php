@@ -67,3 +67,9 @@ docker-compose run --rm php_cli bash
 #### 第13章 実装を導くテスト
 
 ![Chapter 13](diagrams/chapter13.png)
+
+#### 第14章 学習用テストと回帰テスト
+
+PHPでは連想配列のキーにObjectを指定することができなかったので、RateResolverを追加してMapの替わりとしました。
+
+![Chapter 14](diagrams/chapter14.png)
