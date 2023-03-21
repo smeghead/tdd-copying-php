@@ -7,6 +7,7 @@ require_once('vendor/autoload.php');
 use PHPUnit\Framework\TestCase;
 use Smeghead\TddCopyingPhp\Bank;
 use Smeghead\TddCopyingPhp\Money;
+use Smeghead\TddCopyingPhp\Sum;
 
 class MoneyTest extends TestCase
 {
@@ -62,7 +63,8 @@ class MoneyTest extends TestCase
         $this->assertTrue(Money::dollar(1)->equals($result));
     }
 
-    public function testMixedAddition() {
+    public function testMixedAddition()
+    {
         $fiveBucks = Money::dollar(5);
         $tenFrancs = Money::franc(10);
         $bank = new Bank();
@@ -70,4 +72,30 @@ class MoneyTest extends TestCase
         $result = $bank->reduce($fiveBucks->plus($tenFrancs), 'USD');
         $this->assertTrue(Money::dollar(10)->equals($result));
     }
+
+    public function testSumPlusMoney()
+    {
+        $fiveBucks = Money::dollar(5);
+        $tenFrancs = Money::franc(10);
+        $bank = new Bank();
+        $bank->addRate('CHF', 'USD', 2);
+        $sum = new Sum($fiveBucks, $tenFrancs);
+        $sum = $sum->plus($fiveBucks);
+        $result = $bank->reduce($sum, 'USD');
+
+        $this->assertTrue(Money::dollar(15)->equals($result));
+    }
+
+    public function testSumTimes() {
+        $fiveBucks = Money::dollar(5);
+        $tenFrancs = Money::franc(10);
+        $bank = new Bank();
+        $bank->addRate('CHF', 'USD', 2);
+        $sum = new Sum($fiveBucks, $tenFrancs);
+        $sum = $sum->times(2);
+        $result = $bank->reduce($sum, 'USD');
+
+        $this->assertTrue(Money::dollar(20)->equals($result));
+    }
+
 }

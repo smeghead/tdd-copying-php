@@ -77,3 +77,7 @@ PHPでは連想配列のキーにObjectを指定することができなかっ�
 #### 第15章 テスト任せとコンパイラ任せ
 
 ![Chapter 15](diagrams/chapter15.png)
+
+#### 第16章 将来の読み手を考えたテスト
+
+![Chapter 16](diagrams/chapter16.png)

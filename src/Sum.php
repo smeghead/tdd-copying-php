@@ -15,10 +15,13 @@ class Sum implements Expression
         $this->addend = $addend;
     }
 
+    public function times(int $multiplier): Expression
+    {
+        return new Sum($this->augend->times($multiplier), $this->addend->times($multiplier));
+    }
     public function plus(Expression $addend): Expression
     {
-        // TODO Expressionを返してない。仮実装
-        return null;
+        return new Sum($this, $addend);
     }
     public function reduce(Bank $bank, string $to): Money
     {
