@@ -73,3 +73,7 @@ docker-compose run --rm php_cli bash
 PHPでは連想配列のキーにObjectを指定することができなかったので、RateResolverを追加してMapの替わりとしました。
 
 ![Chapter 14](diagrams/chapter14.png)
+
+#### 第15章 テスト任せとコンパイラ任せ
+
+![Chapter 15](diagrams/chapter15.png)
